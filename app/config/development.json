@@ -1,0 +1,8 @@
+{
+    "host" : "http://localhost:3000",
+    "dbURI": "mongodb://localhost:27017/tesis",
+    "sessionSecret": "f31f2f4e88b1f4c29a4542671b247f9b",
+    "tokenExpire": 5300,
+    "port": 3000,
+    "domain": "<pucp.edu.pe>"
+}
