@@ -1,6 +1,7 @@
 # LMS BACKEND API
 
 This project contains the backend API code for the [LMS Front end](https://github.com/omob/LMS-FRONTEND) Application
+Basado de un sistema existente de https://github.com/omob/LMS-Backend-API
 
 ## Configuration
 
