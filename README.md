@@ -1,54 +1,17 @@
-# LMS BACKEND API
+# Tesis2-LMS-Back
 
-This project contains the backend API code for the [LMS Front end](https://github.com/omob/LMS-FRONTEND) Application
-Basado de un sistema existente de https://github.com/omob/LMS-Backend-API
+API Express/Mongoose para alumnos, docentes y administración. Basada en [LMS-Backend-API](https://github.com/omob/LMS-Backend-API); cliente: [Tesis2-LMS-Front](https://github.com/Franccesco1907/Tesis2-LMS-Front).
 
-## Configuration
+1. Ejecutar `npm ci`.
+2. Configurar MongoDB y un secreto propio en `app/config/development.json` (JSON sin comentarios):
 
-Create a `development.json` file under the `./app/config` directory. Populate the json file like so:
-
-```
-{
-    "host" : "http://localhost:3000",
-    "dbURI": "<YOUR MONGODB URL>" #mongodb://<dbuser>:<dbpassword>@ds113736.mlab.com:13736/erp,
-    "sessionSecret": "f31f2f4e88b1f4c29a4542671b247f9b",
-    "tokenExpire": 5300,
-    "port": 3000,
-    "domain": "<Your preferred domain>"#unilag.edu.ng
-}
-
+```json
+{"host":"http://localhost:3000","dbURI":"mongodb://127.0.0.1:27017/lms","sessionSecret":"REEMPLAZAR_CON_SECRETO_LOCAL","tokenExpire":5300,"port":3000,"domain":"example.edu"}
 ```
 
-## Installation
+3. Ejecutar `node server.js`. Rutas en `/api`, `/api/admin`, `/api/student`, `/api/staff` y `/api/lecturer`.
 
-```bash
-$ cd lms-backend-api
-$ npm install
-$ npm run start
-```
-### Database collections for dev setup
-https://1drv.ms/u/s!AtuFwKw_48h8qUm0OLgfTB264g2p?e=dx2X2w
+Con `NODE_ENV=production`, el código lee `host`, `dbURI`, `sessionSecret`, `PORT` y `tokenExpire` del entorno; el dominio se define en `app/config/index.js`. No publicar secretos ni reutilizar los valores versionados.
 
-## Live Demo
-
-#### SOME API PATHS
-
-[/api/courses](https://lmsbackend.herokuapp.com/api/courses)
-
-[/api/departments](https://lmsbackend.herokuapp.com/api/departments)
-
-[/api/faculty](https://lmsbackend.herokuapp.com/api/faculty)
-
-[/api/programmes](https://lmsbackend.herokuapp.com/api/programmes)
-
-[/applicant/register](https://lmsbackend.herokuapp.com/api/applicant/register)
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+Datos de desarrollo heredados: [colecciones](https://1drv.ms/u/s!AtuFwKw_48h8qUm0OLgfTB264g2p?e=dx2X2w). Su disponibilidad y compatibilidad no están verificadas.
+`npm test` es un marcador que termina con error; no hay suite automatizada. Licencia: [MIT](LICENSE).
